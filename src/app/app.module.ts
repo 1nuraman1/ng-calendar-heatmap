@@ -7,6 +7,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarHeatmapModule } from 'ng-calendar-heatmap';
+import { CommonModule, DatePipe } from '@angular/common';
+
 
 import { AppComponent } from './app.component';
 
@@ -16,6 +18,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
     CalendarHeatmapModule,
     BrowserAnimationsModule,
@@ -24,7 +27,7 @@ import { AppComponent } from './app.component';
     MatButtonModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

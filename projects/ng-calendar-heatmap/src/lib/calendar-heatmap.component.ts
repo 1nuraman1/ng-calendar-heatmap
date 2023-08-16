@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import * as moment_ from 'moment';
 import { CalendarData } from './models/calendar-data';
 import { CalendarOptions, getDefaultOptions } from './models/calendar-options';
+import { DatePipe } from "@angular/common";
 
 const moment = moment_;
 
@@ -70,7 +71,7 @@ export class CalendarHeatmapComponent implements OnChanges {
   protected tooltip: any;
   protected dayRects: any;
 
-  constructor() {
+  constructor(private datePipe: DatePipe) {
     this.options = getDefaultOptions();
     this.options.now = moment().endOf('day').toDate();
     this.options.yearAgo = moment().startOf('day').subtract(1, 'year').toDate();
@@ -115,6 +116,7 @@ export class CalendarHeatmapComponent implements OnChanges {
     this.dateRange = d3.timeDays(this.options.yearAgo, this.options.now);
     this.firstDate = moment(this.dateRange[0]);
     this.monthRange = d3.timeMonths(moment(this.firstDate).toDate(), this.options.now);
+
 
     if (!this.options.staticMax) {
       if (this.data.length === 0) {
@@ -307,6 +309,7 @@ export class CalendarHeatmapComponent implements OnChanges {
   }
 
   protected tooltipHTMLForDate(d: Date) {
+    moment.locale('ru');
     const dateStr = moment(d).format('ddd, MMM Do YYYY');
     const count = this.countForDate(d);
     return '<span><strong>'

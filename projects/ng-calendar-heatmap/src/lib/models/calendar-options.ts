@@ -4,32 +4,32 @@ import { CalendarLocale } from './calendar-locale';
 
 export function getDefaultOptions(): CalendarOptions {
   return {
-    width: 705,
+    width: 1100,
     height: 110,
     responsive: false,
-    legendWidth: 95,
+    legendWidth: 1050,
     SQUARE_LENGTH: 11,
     SQUARE_PADDING: 2,
     MONTH_LABEL_PADDING: 6,
-    DAY_WIDTH: 12,
+    DAY_WIDTH: 20,
     MONTH_LABEL_HEIGHT: 10,
     now: new Date(),
     yearAgo: new Date(),
     startDate: null,
     max: null,
-    colorRange: ['#D8E6E7', '#218380'],
+    colorRange: ['#EDEDED', '#254E77'],
     tooltipEnabled: true,
     tooltipUnit: 'contribution',
     legendEnabled: true,
     onClick: null,
     weekStart: CalendarWeekStart.SUNDAY,
     locale: {
-      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      months: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'],
+      days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
       no: 'No',
       on: 'on',
-      less: 'Less',
-      more: 'More'
+      less: 'Мень',
+      more: 'Боль'
     }
   };
 }

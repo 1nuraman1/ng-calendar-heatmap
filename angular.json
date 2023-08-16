@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "ng-calendar-heatmap-example"
+  "defaultProject": "ng-calendar-heatmap-example",
+  "cli": {
+    "analytics": "03cf0a91-1be9-4adb-b2d3-645ad43661c0"
+  }
 }
